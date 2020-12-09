@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: inline-block;
+    width: 600px;
+    height: 600px;
+    background-color: aquamarine;
+}
+
+.item {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    /* float: right; */
+}
+
+.c5 {
+    float: left;
+}
