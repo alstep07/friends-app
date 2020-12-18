@@ -8,13 +8,16 @@
 .header {
     position: fixed;
     height: 4rem;
+    padding: .6rem 1.5rem;
     width: 100%;
     background-color: #54a1b6;
     box-shadow: 0 0 8px #777;
 }
 
 .header__title {
-    color: #18172e;
+    color: #142b20;
+    font-size: 2.4rem;
+    letter-spacing: .15rem;
 }
 
 .navbar {
@@ -23,41 +26,64 @@
     width: 20vw;
     min-width: 200px;
     height: 100%;
+    padding: 1.5rem;
     background-color:#e6e1a1;
     box-shadow: 0 0 7px #999;
+    display: flex;
+    flex-direction: column;
 }
 
 .main {
+    min-height: 100vh;
     margin-left: 20vw;
     padding: 4rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    background-color: rgb(183, 216, 198);
+    background: #a9d8ac;
 }
 
 .card {
     width: 180px;
-    height: 260px;
-    background-color: rgb(223, 175, 156);
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    margin: 20px;
-    padding: 15px 10px;
+    margin: 1.2rem;
+    padding: .5rem;
     border-radius: .5rem;
     text-align: center;
-    box-shadow: 0 0 7px #999;
+    box-shadow: 0 0 7px #777;
+}
+
+.card.male {
+    background-color: #a6d9e4;
+}
+
+.card.female {
+    background-color: #dfb5c3;
 }
 
 .card__img {
     border-radius: .5rem;
-    width: 95%;
+    width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: .8rem;
 }
 
 .card__name {
     font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+.card__age {
+
+}
+
+.error {
+    margin: 3rem auto;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 3rem;
 }
