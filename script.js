@@ -1,5 +1,6 @@
 const main = document.querySelector(".main");
 const url = "https://randomuser.me/api/?results=70";
+const errMessage = "server not responding";
 
 const fetchFriends = async (url) => {
 	try {
@@ -7,7 +8,7 @@ const fetchFriends = async (url) => {
 		let data = await response.json();
 		return data.results;
 	} catch (err) {
-		main.innerHTML = `<div class="error">server not responding<br>(error: ${err})</div>`;
+		main.innerHTML = `<div class="error">${errMessage}<br>(error: ${err})</div>`;
 	}
 };
 
@@ -25,7 +26,7 @@ function render(friend) {
 	const age = document.createElement("p");
 
 	name.innerHTML = `${friend.name.first}<br> ${friend.name.last}`;
-	age.innerHTML = `age: ${friend.dob.age} years`;
+	age.innerHTML = `${friend.dob.age} y.o.`;
 	img.setAttribute("src", friend.picture.large);
 
 	card.classList.add("card");
