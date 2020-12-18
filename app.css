@@ -5,6 +5,10 @@
     font-family: sans-serif;
 }
 
+body {
+    background: #a9d8ac;
+}
+
 .header {
     position: fixed;
     height: 4rem;
@@ -12,12 +16,34 @@
     width: 100%;
     background-color: #54a1b6;
     box-shadow: 0 0 8px #777;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__title {
-    color: #142b20;
+    color: #0e1f16;
     font-size: 2.4rem;
     letter-spacing: .15rem;
+}
+
+.header__social {
+    list-style-type: none;
+    width: 350px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__social__link {
+    text-decoration: none;
+    color:#0c1b14;
+}
+
+.header__social__link:hover {
+    color: #fff;
 }
 
 .navbar {
@@ -46,8 +72,17 @@
 }
 
 .input__btn {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+}
+
+.input__btn-up {
+    background: no-repeat .2rem/2rem url(./img/up-arrow.png)
+}
+
+.input__btn-down {
+    background: no-repeat .2rem/2rem url(./img/down-arrow.png)
 }
 
 .search__by-gender {
@@ -76,6 +111,21 @@
     justify-content: space-between;
 }
 
+.search__reset {
+    width: 100%;
+}
+
+.search__reset__btn {
+    display: block;
+    width: 150px;
+    margin: 1.5rem auto;
+    height: 2.3rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #999;
+}
+
 .main {
     min-height: 100vh;
     margin-left: 20vw;
@@ -83,7 +133,6 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    background: #a9d8ac;
 }
 
 .card {

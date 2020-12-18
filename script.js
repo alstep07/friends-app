@@ -1,6 +1,7 @@
 const main = document.querySelector(".main");
 const url = "https://randomuser.me/api/?results=70";
 const errMessage = "server not responding";
+const handler = document.querySelector(".search-panel");
 
 const fetchFriends = async (url) => {
 	try {
@@ -14,27 +15,53 @@ const fetchFriends = async (url) => {
 
 const init = async () => {
 	const results = await fetchFriends(url);
-	results.forEach((elem) => render(elem));
+	render(results);
 };
 
 init();
 
-function render(friend) {
+function sortBySearch(arr, str) {
+	return arr.filter((elem) =>
+		`${elem.name.first}${elem.name.last}`
+			.toLowerCase()
+			.includes(str.toLowerCase())
+	);
+}
+
+function sortByGender(arr, gender) {
+	return arr.filter((elem) => elem.gender === gender);
+}
+
+function sortByName(arr, type) {
+	if (type === "name_a-z") {
+		return arr.sort((a, b) => a.name.first.localeCompare(b.name.first));
+	} else if (type === "name_z-a")
+		return arr.sort((a, b) => b.name.first.localeCompare(a.name.first));
+}
+
+function sortByAge(arr, type) {
+	if (type === "age_up") {
+		return arr.sort((a, b) => a.dob.age - b.dob.age);
+	} else if (type === "age_down") {
+		return arr.sort((a, b) => b.dob.age - a.dob.age);
+	}
+}
+
+function render(arr) {
+	arr.forEach((elem) => createCard(elem));
+}
+
+function createCard(friend) {
 	const card = document.createElement("div");
-	const img = document.createElement("img");
-	const name = document.createElement("p");
-	const age = document.createElement("p");
-
-	name.innerHTML = `${friend.name.first}<br> ${friend.name.last}`;
-	age.innerHTML = `${friend.dob.age} y.o.`;
-	img.setAttribute("src", friend.picture.large);
-
-	card.classList.add("card");
-	card.classList.add(`${friend.gender}`);
-	img.classList.add("card__img");
-	name.classList.add("card__name");
-	age.classList.add("card__age");
-
-	card.append(img, name, age);
+	card.innerHTML = `
+		<div class="card ${friend.gender}">
+			<img src="${friend.picture.large}" alt="photo" class="card__img">
+			<p class="card__name">${friend.name.first}<br> ${friend.name.last}</p>
+			<p class="card__age">${friend.dob.age} y.o.</p>
+		</div>`;
 	main.append(card);
 }
+
+// arr.sort((a,b) => a.dob.age - b.dob.age)
+// arr.sort((a, b) => a.name.first.localeCompare(b.name.first))
+//arr.filter((elem) => elem.gender === 'male')

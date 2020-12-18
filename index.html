@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <header class="header">
         <h1 class="header__title">
             Friends App
@@ -20,53 +21,60 @@
                 </a>
             </li>
             <li class="header__social__item">
-                <a href="" class="header__social__link">
-                    Kottans-frontend
+                <a href="https://github.com/kottans/frontend" class="header__social__link">
+                    Kottans - frontend
                 </a>
             </li>
         </ul>
     </header>
-    <nav class="navbar">
-        <label for="search" class="search__by-name">
-            <input type="text" placeholder="search" class="input__search" name="search">
-        </label>
-        <hr>
-        <div class="search__by-gender">
-            <label for="male">
-                <input type="radio" id="male" name="gender" value="male">
-                male
-            </label>
-            <label for="female">
-                <input type="radio" id="female" name="gender" value="female">
-                female
-            </label>
-            <label for="all">
-                <input type="radio" id="all" name="gender" value="all">
-                all
-            </label>
-        </div>
-        <hr>
-        <div class="search__by-alphabet" for="by-alphabet">
-            by name
-            <div class="search__arrows">
-                <input type="image" src="./img/down-arrow.png" name="alphabetical" id="name_a-z" class="input__btn">
-                <input type="image" src="./img/up-arrow.png" name="alphabetical" id="name_z-a" class="input__btn">
-            </div>
-        </div>
-        <hr>
-        <div class="search__by-age" for="by-age">
-            by age
-            <div class="search__arrows">
-                <input type="image" src="./img/down-arrow.png" name="by-age" id="age_down"
-                    class="input__btn input__age-down">
-                <input type="image" src="./img/up-arrow.png" name="by-age" id="age_up" class="input__btn input__age-up">
-            </div>
-        </div>
 
+    <nav class="navbar">
+        <form class="search-panel">
+            <div class="search__by-name">
+                <input type="text" id="search" value="" placeholder="search" class="input__search" name="search-name">
+            </div>
+            <hr>
+            <div class="search__by-gender">
+                <label for="male">
+                    <input type="radio" id="male" name="gender" value="male">
+                    male
+                </label>
+                <label for="female">
+                    <input type="radio" id="female" name="gender" value="female">
+                    female
+                </label>
+                <label for="all">
+                    <input type="radio" id="all" name="gender" value="all">
+                    all
+                </label>
+            </div>
+            <hr>
+            <div class="search__by-alphabet" for="by-alphabet">
+                by name
+                <div class="search__arrows">
+                    <input type="button" name="alphabetical" id="name_a-z" class="input__btn input__btn-down">
+                    <input type="button" name="alphabetical" id="name_z-a" class="input__btn input__btn-up">
+                </div>
+            </div>
+            <hr>
+            <div class="search__by-age" for="by-age">
+                by age
+                <div class="search__arrows">
+                    <input type="button" name="by-age" id="age_down" class="input__btn input__btn-down">
+                    <input type="button" name="by-age" id="age_up" class="input__btn input__btn-up">
+                </div>
+            </div>
+            <hr>
+            <div class="search__reset">
+                <input type="reset" value="reset" class="search__reset__btn">
+            </div>
+        </form>
     </nav>
+
     <main class="main">
 
     </main>
+
     <script src="./script.js"></script>
 </body>
 
