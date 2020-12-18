@@ -39,7 +39,7 @@ body {
 
 .header__social__link {
     text-decoration: none;
-    color:#0c1b14;
+    color: #0c1b14;
 }
 
 .header__social__link:hover {
@@ -75,6 +75,7 @@ body {
     width: 2.5rem;
     height: 2.5rem;
     border: none;
+    cursor: pointer;
 }
 
 .input__btn-up {
@@ -92,6 +93,10 @@ body {
     flex-direction: column;
     justify-content: space-between;
     margin: 1rem 0;
+}
+
+.search__by-gender__label {
+    cursor: pointer;
 }
 
 .search__by-alphabet,
@@ -113,6 +118,7 @@ body {
 
 .search__reset {
     width: 100%;
+    cursor: pointer;
 }
 
 .search__reset__btn {

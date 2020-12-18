@@ -1,6 +1,6 @@
 const main = document.querySelector(".main");
 const url = "https://randomuser.me/api/?results=70";
-const errMessage = "server not responding";
+const errMessage = "server is not responding";
 const handler = document.querySelector(".search-panel");
 
 const fetchFriends = async (url) => {
@@ -61,7 +61,3 @@ function createCard(friend) {
 		</div>`;
 	main.append(card);
 }
-
-// arr.sort((a,b) => a.dob.age - b.dob.age)
-// arr.sort((a, b) => a.name.first.localeCompare(b.name.first))
-//arr.filter((elem) => elem.gender === 'male')
