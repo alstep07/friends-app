@@ -1,7 +1,20 @@
+const MAX_FRIENDS_VALUE = 100;
 const main = document.querySelector(".main");
-const url = "https://randomuser.me/api/?results=70";
+const url = `https://randomuser.me/api/?results=${MAX_FRIENDS_VALUE}&noinfo`;
 const errMessage = "server is not responding";
-const handler = document.querySelector(".search-panel");
+const searchInput = document.querySelector("#search");
+const filterGender = document.querySelector(".search__by-gender");
+const filterName = document.querySelector(".search__by-alphabet");
+const filterAge = document.querySelector(".search__by-age");
+const filterDate = document.querySelector(".search__by-date");
+const resetBtn = document.querySelector(".search__reset__btn");
+const filters = {
+	search: null,
+	gender: null,
+	age: null,
+	name: null,
+	date: null,
+};
 
 const fetchFriends = async (url) => {
 	try {
@@ -13,23 +26,75 @@ const fetchFriends = async (url) => {
 	}
 };
 
-const init = async () => {
-	const results = await fetchFriends(url);
+const init = (results) => {
 	render(results);
+	console.log(results);
+
+	data = results.slice();
+
+	searchInput.addEventListener("keyup", ({ target }) => {
+		filters.search = target.value;
+		filterCards();
+	});
+
+	filterGender.addEventListener("click", ({ target }) => {
+		filters.gender = target.id;
+		filterCards();
+	});
+
+	filterName.addEventListener("click", ({ target }) => {
+		filters.name = target.id;
+		filters.age = null;
+		filters.date = null;
+		filterCards();
+	});
+
+	filterAge.addEventListener("click", ({ target }) => {
+		filters.age = target.id;
+		filters.name = null;
+		filters.date = null;
+		filterCards();
+	});
+
+	filterDate.addEventListener("click", ({ target }) => {
+		filters.date = target.id;
+		filters.age = null;
+		filters.name = null;
+		filterCards();
+	});
+
+	resetBtn.addEventListener("click", () => {
+		filters.search = null;
+		filters.gender = null;
+		filters.name = null;
+		filters.age = null;
+		render(results);
+	});
 };
 
-init();
+function filterCards() {
+	let filteredArr = data;
+	if (filters.search) filteredArr = sortBySearch(filteredArr, filters.search);
+	if (filters.gender) filteredArr = sortByGender(filteredArr, filters.gender);
+	if (filters.name) filteredArr = sortByName(filteredArr, filters.name);
+	if (filters.age) filteredArr = sortByAge(filteredArr, filters.age);
+	if (filters.date) filteredArr = sortByDate(filteredArr, filters.date);
+	render(filteredArr);
+}
 
 function sortBySearch(arr, str) {
 	return arr.filter((elem) =>
-		`${elem.name.first}${elem.name.last}`
+		`${elem.name.first}${elem.name.last}${elem.location.country}${elem.location.city}`
 			.toLowerCase()
 			.includes(str.toLowerCase())
 	);
 }
 
-function sortByGender(arr, gender) {
-	return arr.filter((elem) => elem.gender === gender);
+function sortByGender(arr, type) {
+	if (type === "all") {
+		return arr;
+	}
+	return arr.filter((elem) => elem.gender === type);
 }
 
 function sortByName(arr, type) {
@@ -47,8 +112,19 @@ function sortByAge(arr, type) {
 	}
 }
 
+function sortByDate(arr, type) {
+	if (type === "date_up") {
+		return arr.sort((a, b) => a.registered.age - b.registered.age);
+	} else if (type === "date_down") {
+		return arr.sort((a, b) => b.registered.age - a.registered.age);
+	}
+}
+
 function render(arr) {
-	arr.forEach((elem) => createCard(elem));
+	main.innerHTML = "";
+	const container = document.createDocumentFragment();
+	arr.forEach((elem) => container.append(createCard(elem)));
+	main.append(container);
 }
 
 function createCard(friend) {
@@ -56,8 +132,13 @@ function createCard(friend) {
 	card.innerHTML = `
 		<div class="card ${friend.gender}">
 			<img src="${friend.picture.large}" alt="photo" class="card__img">
-			<p class="card__name">${friend.name.first}<br> ${friend.name.last}</p>
+			<p class="card__name">${friend.name.first} ${friend.name.last}</p>
 			<p class="card__age">${friend.dob.age} y.o.</p>
+			<p class="card__location">${friend.location.country}<br>${friend.location.city}</p>
 		</div>`;
-	main.append(card);
+	return card;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+	fetchFriends(url).then((results) => init(results));
+});
