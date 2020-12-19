@@ -59,7 +59,7 @@ body {
     background-color: #e6e1a1;
     box-shadow: 0 0 7px #999;
     flex-direction: column;
-    transition: all .7s;
+    transition: left .7s;
 }
 
 .input__search {
@@ -147,7 +147,7 @@ body {
 
 .card {
     width: 200px;
-    height: 350px;
+    height: 370px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -160,11 +160,11 @@ body {
 }
 
 .card.male {
-    background-color: #a6d9e4;
+    background-color: #c3e6ee;
 }
 
 .card.female {
-    background-color: #dfb5c3;
+    background-color: #f0d8e0;
 }
 
 .card__img {
@@ -185,9 +185,40 @@ body {
 }
 
 .card__location {
-    margin-bottom: 0.4rem;
-    font-size: 1rem;
-    line-height: 1.3rem;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin-bottom: .2rem;
+}
+
+.card__contacts {
+    width: 55%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__link {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.card__link:hover {
+    background-color:#54a1b6;
+}
+
+.card__mail__img{
+    height: 1.2rem;
+}
+
+.card__phone__img {
+    height: 1.5rem;
 }
 
 .error {

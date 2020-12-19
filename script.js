@@ -1,6 +1,8 @@
 const MAX_FRIENDS_VALUE = 100;
 const main = document.querySelector(".main");
 const url = `https://randomuser.me/api/?results=${MAX_FRIENDS_VALUE}&noinfo`;
+const phoneImg = "./img/phone.png";
+const mailImg = "./img/mail.png";
 const errMessage = "server is not responding";
 const searchInput = document.querySelector("#search");
 const filterGender = document.querySelector(".search__by-gender");
@@ -140,8 +142,16 @@ function createCard(friend) {
 		<div class="card ${friend.gender}">
 			<img src="${friend.picture.large}" alt="photo" class="card__img">
 			<p class="card__name">${friend.name.first} ${friend.name.last}</p>
-			<p class="card__age">${friend.dob.age} y.o.</p>
+			<p class="card__age">${friend.dob.age} years</p>
 			<p class="card__location">${friend.location.country}<br>${friend.location.city}</p>
+			<div class="card__contacts">
+				<a class="card__link" href="tel: ${friend.cell}">
+					<img class="card__phone__img" src="${phoneImg}" alt = "phone to">
+				</a>
+				<a class="card__link" href="mailto: ${friend.email}">
+					<img class="card__mail__img" src="${mailImg}" alt = "mail to">
+				</a>
+			</div>
 		</div>`;
 	return card;
 }
