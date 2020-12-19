@@ -8,6 +8,8 @@ const filterName = document.querySelector(".search__by-alphabet");
 const filterAge = document.querySelector(".search__by-age");
 const filterDate = document.querySelector(".search__by-date");
 const resetBtn = document.querySelector(".search__reset__btn");
+const popupBtn = document.querySelector(".popup");
+const navbar = document.querySelector(".navbar");
 const filters = {
 	search: null,
 	gender: null,
@@ -15,6 +17,11 @@ const filters = {
 	name: null,
 	date: null,
 };
+
+popupBtn.addEventListener("click", () => {
+	popupBtn.classList.toggle("popup-active");
+	navbar.classList.toggle("navbar-active");
+})
 
 const fetchFriends = async (url) => {
 	try {
