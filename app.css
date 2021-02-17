@@ -6,15 +6,16 @@
 }
 
 body {
-    background: #a9d8ac;
+    background: #eee;
 }
 
 .header {
     position: fixed;
+    z-index: 2;
     height: 4rem;
     padding: .6rem 1.5rem;
     width: 100%;
-    background-color: #54a1b6;
+    background-color: #7a92d4;
     box-shadow: 0 0 8px #777;
     display: flex;
     flex-direction: row;
@@ -47,16 +48,15 @@ body {
     color: #fff;
 }
 
-
-
 .navbar {
+    z-index: 1;
     display: block;
     position: fixed;
     margin-top: 4rem;
     width: 220px;
     height: 100%;
     padding: 1rem;
-    background-color: #e6e1a1;
+    background-color: #f7f3bf;
     box-shadow: 0 0 7px #999;
     transition: left .4s;
 }
@@ -153,39 +153,40 @@ body {
 .main {
     min-height: 100vh;
     margin-left: 220px;
-    padding: 5rem 1rem;
+    padding: 7rem 1rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
 
 .card {
-    width: 220px;
-    min-height: 380px;
+    position: relative;
+    width: 200px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
     align-items: center;
-    margin: 1.2rem;
-    padding: .5rem;
-    border-radius: .5rem;
+    margin: 2.5rem 1.2rem;
+    padding: 4rem .5rem 1rem .5rem;
     text-align: center;
-    box-shadow: 0 0 7px #777;
+    box-shadow: 6px 6px 0 -1px #7a92d4;
+    border: 1px solid #666;
 }
 
 .card.male {
-    background-color: #c3e6ee;
+    background-color: #d6f3fa;
 }
 
 .card.female {
-    background-color: #f0d8e0;
+    background-color: #faecf1;
 }
 
 .card__img {
-    border-radius: .5rem;
-    width: 100%;
+    position: absolute;
+    top: -50px;
+    width: 100px;
     height: auto;
-    margin-bottom: .8rem;
+    border: 1px solid #666;
 }
 
 .card__name {
@@ -214,8 +215,8 @@ body {
 }
 
 .card__link {
-    width: 3rem;
-    height: 3rem;
+    width: 2.8rem;
+    height: 2.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -224,7 +225,7 @@ body {
 }
 
 .card__link:hover {
-    background-color:#54a1b6;
+    background-color:#7a92d4;
 }
 
 .card__mail__img{
