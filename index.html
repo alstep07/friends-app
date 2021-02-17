@@ -34,12 +34,9 @@
     </header>
 
     <nav class="navbar">
-        <form class="search-panel">
-            <div class="search__by-name">
-                <input type="text" id="search" placeholder="name or location" class="input__search" name="search-name">
-            </div>
-            <hr>
-            <div class="search__by-gender">
+        <form class="search-panel" id="form">
+            <input type="text" id="search" placeholder="name or location" class="input__search" name="search-name">
+            <fieldset class="search__by-gender">
                 <label class="search__by-gender__label" for="male">
                     <input type="radio" id="male" name="gender" value="male">
                     male
@@ -52,35 +49,29 @@
                     <input type="radio" id="all" name="gender" value="all">
                     all
                 </label>
-            </div>
-            <hr>
-            <div class="search__by-alphabet" for="by-alphabet">
-                name
-                <div class="search__arrows">
-                    <input type="button" name="alphabetical" id="name_a-z" class="input__btn input__btn-down">
-                    <input type="button" name="alphabetical" id="name_z-a" class="input__btn input__btn-up">
-                </div>
-            </div>
-            <hr>
-            <div class="search__by-age" for="by-age">
-                age
-                <div class="search__arrows">
-                    <input type="button" name="by-age" id="age_down" class="input__btn input__btn-down">
-                    <input type="button" name="by-age" id="age_up" class="input__btn input__btn-up">
-                </div>
-            </div>
-            <hr>
-            <div class="search__by-date" for="by-date">
-                new
-                <div class="search__arrows">
-                    <input type="button" name="by-date" id="date_down" class="input__btn input__btn-down">
-                    <input type="button" name="by-date" id="date_up" class="input__btn input__btn-up">
-                </div>
-            </div>
-            <hr>
-            <div class="search__reset">
-                <input type="reset" value="reset" class="search__reset__btn">
-            </div>
+            </fieldset>
+            <fieldset class="search__by-alphabet">
+                <label class="search__arrows">
+                    name
+                    <input type="radio" name="name" id="name_a-z" value="a-z">
+                    <input type="radio" name="name" id="name_z-a" value="z-a">
+                </label>
+            </fieldset>
+            <fieldset class="search__by-age">
+                <label class="search__arrows">
+                    age
+                    <input type="radio" name="by-age" id="age_down" value="down">
+                    <input type="radio" name="by-age" id="age_up" value="up">
+                </label>
+            </fieldset>
+            <fieldset class="search__by-date" for="by-date">
+                <label class="search__arrows">
+                    new
+                    <input type="radio" name="by-date" id="date_down" value="down">
+                    <input type="radio" name="by-date" id="date_up" value="up">
+                </label>
+            </fieldset>
+            <input type="reset" value="reset" class="search__reset__btn">
         </form>
     </nav>
 
