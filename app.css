@@ -146,9 +146,19 @@ body {
 	height: 2.3rem;
 	font-size: 1.3rem;
 	border: none;
-	border-radius: 5px;
-	box-shadow: 0 0 5px #999;
+	transition: all .1s;
+	border: 1px solid #666;
+	box-shadow: 4px 4px 0 -1px #7a92d4;
 	cursor: pointer;
+}
+
+.search__reset__btn:focus {
+	outline: none;
+}
+
+.search__reset__btn:active {
+	transform: translate(4px, 4px);
+	box-shadow: 0 0 0 -1px #7a92d4;
 }
 
 .main {

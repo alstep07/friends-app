@@ -53,25 +53,25 @@
             <fieldset class="search__by-alphabet">
                 <label class="search__arrows">
                     name
-                    <input type="radio" name="name" value="a-z">
-                    <input type="radio" name="name" value="z-a">
+                    <input type="radio" name="sort" value="name asc">
+                    <input type="radio" name="sort" value="name desc">
                 </label>
             </fieldset>
             <fieldset class="search__by-age">
                 <label class="search__arrows">
                     age
-                    <input type="radio" name="age" value="age-down">
-                    <input type="radio" name="age" value="age-up">
+                    <input type="radio" name="sort" value="age asc">
+                    <input type="radio" name="sort" value="age desc">
                 </label>
             </fieldset>
             <fieldset class="search__by-date" for="by-date">
                 <label class="search__arrows">
                     new
-                    <input type="radio" name="date" value="date-down">
-                    <input type="radio" name="date" value="date-up">
+                    <input type="radio" name="sort" value="date asc">
+                    <input type="radio" name="sort" value="date desc">
                 </label>
             </fieldset>
-            <input type="reset" value="reset" class="search__reset__btn">
+            <input id="reset" type="reset" value="reset" class="search__reset__btn">
         </form>
     </nav>
 
