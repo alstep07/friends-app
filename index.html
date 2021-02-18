@@ -35,40 +35,40 @@
 
     <nav class="navbar">
         <form class="search-panel" id="form">
-            <input type="text" id="search" placeholder="name or location" class="input__search" name="search-name">
+            <input type="text" id="search" placeholder="name or location" class="input__search" name="search">
             <fieldset class="search__by-gender">
                 <label class="search__by-gender__label" for="male">
-                    <input type="radio" id="male" name="gender" value="male">
+                    <input type="radio" name="gender" value="male">
                     male
                 </label>
                 <label class="search__by-gender__label" for="female">
-                    <input type="radio" id="female" name="gender" value="female">
+                    <input type="radio" name="gender" value="female">
                     female
                 </label>
                 <label class="search__by-gender__label" for="all">
-                    <input type="radio" id="all" name="gender" value="all">
+                    <input type="radio" name="gender" value="all">
                     all
                 </label>
             </fieldset>
             <fieldset class="search__by-alphabet">
                 <label class="search__arrows">
                     name
-                    <input type="radio" name="name" id="name_a-z" value="a-z">
-                    <input type="radio" name="name" id="name_z-a" value="z-a">
+                    <input type="radio" name="name" value="a-z">
+                    <input type="radio" name="name" value="z-a">
                 </label>
             </fieldset>
             <fieldset class="search__by-age">
                 <label class="search__arrows">
                     age
-                    <input type="radio" name="by-age" id="age_down" value="down">
-                    <input type="radio" name="by-age" id="age_up" value="up">
+                    <input type="radio" name="age" value="age-down">
+                    <input type="radio" name="age" value="age-up">
                 </label>
             </fieldset>
             <fieldset class="search__by-date" for="by-date">
                 <label class="search__arrows">
                     new
-                    <input type="radio" name="by-date" id="date_down" value="down">
-                    <input type="radio" name="by-date" id="date_up" value="up">
+                    <input type="radio" name="date" value="date-down">
+                    <input type="radio" name="date" value="date-up">
                 </label>
             </fieldset>
             <input type="reset" value="reset" class="search__reset__btn">

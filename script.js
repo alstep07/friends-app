@@ -38,26 +38,21 @@ const fetchFriends = async (url) => {
 
 const init = (results) => {
 	render(results);
-	const data = results.slice();
+	const users = results.slice();
 
-	searchInput.addEventListener("keyup", ({ target }) => {
-		filters.search = target.value;
-		filterCards(data);
-	});
-
-	form.addEventListener('change', ({target}) => {
-		console.log(target.value);
+	form.addEventListener('input', (event) => {
+		filterCards(users, target.name, target.value);
 	})
 };
 
-function filterCards(data) {
-	let filteredArr = data;
-	if (filters.search) filteredArr = sortBySearch(filteredArr, filters.search);
-	if (filters.gender) filteredArr = sortByGender(filteredArr, filters.gender);
-	if (filters.name) filteredArr = sortByName(filteredArr, filters.name);
-	if (filters.age) filteredArr = sortByAge(filteredArr, filters.age);
-	if (filters.date) filteredArr = sortByDate(filteredArr, filters.date);
-	render(filteredArr);
+function filterCards(usersToFilter, filterType, filterValue) {
+	let users = usersToFilter;
+	switch (filterType) {
+		case "gender":
+			users = filterByGender(users, filterValue);
+			break;
+	}
+	render(users);
 }
 
 function sortBySearch(dataToFilter, searchValue) {
@@ -68,7 +63,7 @@ function sortBySearch(dataToFilter, searchValue) {
 	);
 }
 
-function sortByGender(dataToFilter, gender) {
+function filterByGender(dataToFilter, gender) {
 	if (gender === "all") {
 		return dataToFilter;
 	}
