@@ -10,7 +10,7 @@ const mailImg = './img/mail.png';
 const errMessage = 'server is not responding';
 
 const resetButton = document.querySelector('#reset');
-const popupButton = document.querySelector('.popup');
+const popupButton = document.querySelector('#popup');
 
 const filterState = {
 	search: null,

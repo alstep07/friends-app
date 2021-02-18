@@ -11,7 +11,7 @@
 <body>
 
     <header class="header">
-        <div class="popup">
+        <div class="header__popup" id="popup">
             <span class="popup__top-line"></span>
             <span class="popup__mid-line"></span>
             <span class="popup__bottom-line"></span>
@@ -34,50 +34,46 @@
     </header>
 
     <nav class="navbar">
-        <form class="search-panel" id="form">
-            <input type="text" id="search" placeholder="name or location" class="input__search" name="search">
-            <fieldset class="search__by-gender">
-                <label class="search__by-gender__label" for="male">
+        <form id="form">
+            <input class="search__input" type="text" id="search" placeholder="name or location" name="search">
+            <fieldset class="gender">
+                <legend>Gender</legend>
+                <label for="male">
                     <input type="radio" name="gender" value="male">
                     male
                 </label>
-                <label class="search__by-gender__label" for="female">
+                <label for="female">
                     <input type="radio" name="gender" value="female">
                     female
                 </label>
-                <label class="search__by-gender__label" for="all">
+                <label for="all">
                     <input type="radio" name="gender" value="all">
                     all
                 </label>
             </fieldset>
-            <fieldset class="search__by-alphabet">
-                <label class="search__arrows">
-                    name
+            <fieldset class="sort">
+                <legend>Sort by:</legend>
+                <fieldset class="sort__type">
+                    <legend>Name</legend>
                     <input type="radio" name="sort" value="name asc">
                     <input type="radio" name="sort" value="name desc">
-                </label>
-            </fieldset>
-            <fieldset class="search__by-age">
-                <label class="search__arrows">
-                    age
+                </fieldset>
+                <fieldset class="sort__type">
+                    <legend>Age</legend>
                     <input type="radio" name="sort" value="age asc">
                     <input type="radio" name="sort" value="age desc">
-                </label>
-            </fieldset>
-            <fieldset class="search__by-date" for="by-date">
-                <label class="search__arrows">
-                    new
+                </fieldset>
+                <fieldset class="sort__type">
+                    <legend>Registration date</legend>
                     <input type="radio" name="sort" value="date asc">
                     <input type="radio" name="sort" value="date desc">
-                </label>
+                </fieldset>
             </fieldset>
-            <input id="reset" type="reset" value="reset" class="search__reset__btn">
+            <input class="reset__btn" id="reset" type="reset" value="reset">
         </form>
     </nav>
 
-    <main class="main">
-
-    </main>
+    <main class="main"></main>
 
     <script src="./script.js"></script>
 </body>
