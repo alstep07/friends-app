@@ -37,37 +37,28 @@
         <form id="form">
             <input class="search__input" type="text" id="search" placeholder="name or location" name="search">
             <fieldset class="gender">
-                <legend>Gender</legend>
-                <label for="male">
-                    <input type="radio" name="gender" value="male">
-                    male
-                </label>
-                <label for="female">
-                    <input type="radio" name="gender" value="female">
-                    female
-                </label>
-                <label for="all">
-                    <input type="radio" name="gender" value="all">
-                    all
-                </label>
+                <legend class="gender__title">Gender</legend>
+                <input class="visually-hidden gender__input" id="male" type="radio" name="gender" value="male">
+                <label class="gender__label" for="male">male</label>
+                <input class="visually-hidden gender__input" id="female" type="radio" name="gender" value="female">
+                <label class="gender__label" for="female">female</label>
+                <input class="visually-hidden gender__input" id="all" type="radio" name="gender" value="all">
+                <label class="gender__label" for="all">all</label>
             </fieldset>
             <fieldset class="sort">
-                <legend>Sort by:</legend>
-                <fieldset class="sort__type">
-                    <legend>Name</legend>
-                    <input type="radio" name="sort" value="name asc">
-                    <input type="radio" name="sort" value="name desc">
-                </fieldset>
-                <fieldset class="sort__type">
-                    <legend>Age</legend>
-                    <input type="radio" name="sort" value="age asc">
-                    <input type="radio" name="sort" value="age desc">
-                </fieldset>
-                <fieldset class="sort__type">
-                    <legend>Registration date</legend>
-                    <input type="radio" name="sort" value="date asc">
-                    <input type="radio" name="sort" value="date desc">
-                </fieldset>
+                <legend class="sort__title">Sort by:</legend>
+                <input class="sort__input visually-hidden" id="name-asc" type="radio" name="sort" value="name asc">
+                <label for="name-asc" class="sort__label"></label>
+                <input class="sort__input visually-hidden" id="name-desc" type="radio" name="sort" value="name desc">
+                <label for="name-desc" class="sort__label"></label>
+                <input class="sort__input visually-hidden" id="age-asc" type="radio" name="sort" value="age asc">
+                <label for="age-asc" class="sort__label"></label>
+                <input class="sort__input visually-hidden" id="age-desc" type="radio" name="sort" value="age desc">
+                <label for="age-desc" class="sort__label"></label>
+                <input class="sort__input visually-hidden" id="date-asc" type="radio" name="sort" value="date asc">
+                <label for="date-asc" class="sort__label"></label>
+                <input class="sort__input visually-hidden" id="date-desc" type="radio" name="sort" value="date desc">
+                <label for="date-desc" class="sort__label"></label>
             </fieldset>
             <input class="reset__btn" id="reset" type="reset" value="reset">
         </form>
