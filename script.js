@@ -108,7 +108,7 @@ function render(dataToRender) {
 function createCard(friend) {
 	const card = document.createElement("div");
 	card.innerHTML = `
-		<div class="card ${friend.gender}">
+		<div class="card">
 			<img src="${friend.picture.large}" alt="photo" class="card__img">
 			<p class="card__name">${friend.name.first} ${friend.name.last}</p>
 			<p class="card__age">${friend.dob.age} years</p>
