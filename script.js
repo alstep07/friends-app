@@ -78,13 +78,10 @@ const filterByGender = (usersToFilter, gender) => {
 
 const sortUsers = (usersToSort, sortType, sortDirection) => {
 	let users = usersToSort;
-	switch (sortType) {
-		case 'age':
-			users = sortByAge(usersToSort, sortDirection);
-			break;
-		case 'name':
-			users = sortByName(usersToSort, sortDirection);
-			break;
+	if (sortType === 'age') {
+		users = sortByAge(usersToSort, sortDirection);
+	} else {
+		users = sortByName(usersToSort, sortDirection);
 	}
 	return users;
 };
