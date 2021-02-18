@@ -42,23 +42,27 @@
                 <label class="gender__label" for="male">male</label>
                 <input class="visually-hidden gender__input" id="female" type="radio" name="gender" value="female">
                 <label class="gender__label" for="female">female</label>
-                <input class="visually-hidden gender__input" id="all" type="radio" name="gender" value="all">
-                <label class="gender__label" for="all">all</label>
             </fieldset>
             <fieldset class="sort">
-                <legend class="sort__title">Sort by:</legend>
-                <input class="sort__input visually-hidden" id="name-asc" type="radio" name="sort" value="name asc">
-                <label for="name-asc" class="sort__label"></label>
-                <input class="sort__input visually-hidden" id="name-desc" type="radio" name="sort" value="name desc">
-                <label for="name-desc" class="sort__label"></label>
-                <input class="sort__input visually-hidden" id="age-asc" type="radio" name="sort" value="age asc">
-                <label for="age-asc" class="sort__label"></label>
-                <input class="sort__input visually-hidden" id="age-desc" type="radio" name="sort" value="age desc">
-                <label for="age-desc" class="sort__label"></label>
-                <input class="sort__input visually-hidden" id="date-asc" type="radio" name="sort" value="date asc">
-                <label for="date-asc" class="sort__label"></label>
-                <input class="sort__input visually-hidden" id="date-desc" type="radio" name="sort" value="date desc">
-                <label for="date-desc" class="sort__label"></label>
+                <legend class="sort__title">Sort by</legend>
+                <div class="sort__type">
+                    <p class="sort__subtitle">Name</p>
+                    <input class="sort__input visually-hidden" id="name-asc" type="radio" name="sort" value="name asc">
+                    <label for="name-asc" class="sort__label sort__label--down"></label>
+                    <input class="sort__input visually-hidden" id="name-desc" type="radio" name="sort"
+                        value="name desc">
+                    <label for="name-desc" class="sort__label sort__label--up"></label>
+                </div>
+                <span class="divider"></span>
+                <div class="sort__type">
+                    <p class="sort__subtitle">Age</p>
+                    <input class="sort__input visually-hidden" id="age-asc" type="radio" name="sort" value="age asc">
+                    <label for="age-asc" class="sort__label sort__label--down"></label>
+                    <input class="sort__input visually-hidden" id="age-desc" type="radio" name="sort" value="age desc">
+                    <label for="age-desc" class="sort__label sort__label--up"></label>
+                </div>
+
+
             </fieldset>
             <input class="reset__btn" id="reset" type="reset" value="reset">
         </form>

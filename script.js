@@ -73,9 +73,6 @@ const filterBySearch = (dataToFilter, searchValue) => {
 };
 
 const filterByGender = (usersToFilter, gender) => {
-	if (gender === 'all') {
-		return usersToFilter;
-	}
 	return usersToFilter.filter((user) => user.gender === gender);
 };
 
@@ -87,9 +84,6 @@ const sortUsers = (usersToSort, sortType, sortDirection) => {
 			break;
 		case 'name':
 			users = sortByName(usersToSort, sortDirection);
-			break;
-		case 'date':
-			users = sortByDate(usersToSort, sortDirection);
 			break;
 	}
 	return users;
@@ -107,14 +101,6 @@ const sortByAge = (usersToFilter, direction) => {
 		return usersToFilter.sort((a, b) => a.dob.age - b.dob.age);
 	} else if (direction === 'desc') {
 		return usersToFilter.sort((a, b) => b.dob.age - a.dob.age);
-	}
-};
-
-const sortByDate = (usersToFilter, direction) => {
-	if (direction === 'asc') {
-		return usersToFilter.sort((a, b) => a.registered.age - b.registered.age);
-	} else if (direction === 'desc') {
-		return usersToFilter.sort((a, b) => b.registered.age - a.registered.age);
 	}
 };
 
