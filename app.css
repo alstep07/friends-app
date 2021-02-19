@@ -6,6 +6,10 @@
 	text-align: center;
 }
 
+input {
+	border-radius: 0;
+}
+
 :focus {
 	outline: 2px solid #7a92d499;
 }
@@ -100,8 +104,9 @@ body {
 }
 
 .gender__title {
-	font-size: 1.4rem;
+	margin: auto;
 	padding: 0 10px;
+	font-size: 1.4rem;
 }
 
 .gender__label {
@@ -131,8 +136,9 @@ body {
 }
 
 .sort__title {
-	font-size: 1.4rem;
+	margin: auto;
 	padding: 0 10px;
+	font-size: 1.4rem;
 }
 
 .sort__type {
